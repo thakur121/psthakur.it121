@@ -1,0 +1,56 @@
+<ion-content>
+	<div class="wrrper">
+		<div class="back-arreow">
+          	<div class="mh-full">
+                <span [routerLink]="'/driver-profile'">
+                      <ion-icon name="arrow-back"></ion-icon>
+                </span>
+          	</div>
+        </div>
+		<div class="logo-setup">
+			<div class="logo-wrap">
+				<img src="assets/images/logo.png">
+			</div>			
+		</div>
+		<div class="login-enter">
+				
+				<div class="heading">
+	        <h2>Complete your Presonal Detils.</h2>
+        </div>
+				<div class="pd-detils">
+                 	<div class="avtar-img">
+                 		<div class="img">
+                 			<div class="p-image">
+	                 			<img *ngIf="!userdata.profile_image"  src="assets/images/user.png">
+	                 			<img *ngIf="userdata.profile_image"  src="{{userdata.profile_image}}" alt="">
+                 			</div>
+	                 			<ion-icon (click)="presentActionSheet()" name="camera"></ion-icon>
+                 		</div>
+                 		
+                 		<p>Add your passport style photo without sunglasses</p>
+                 	</div>
+                 	<div class="form-data">
+                 		<ion-item>
+						  	<ion-label position="floating">Birthday</ion-label>
+					  	 	<ion-datetime [(ngModel)]="userdata.dob" displayFormat="DD/MM/YYYY" min="1950-01-01" max="2050-01-01" ></ion-datetime>
+						</ion-item>
+						<ion-item>
+						  	<ion-label position="floating">Gender</ion-label>
+					  	 	<ion-select placeholder="Select Gender" [(ngModel)]="userdata.gender">
+						      	<ion-select-option value="2">Female</ion-select-option>
+						      	<ion-select-option value="1">Male</ion-select-option>
+						    </ion-select>
+						</ion-item>
+						<ion-item>
+						  	<ion-label position="floating">Bio</ion-label>
+				  	 	 	<ion-input [(ngModel)]="userdata.bio" placeholder="Add your Bio"></ion-input>
+						</ion-item>
+                 		
+                 	</div>
+                </div>
+                <div (click)="gotoproducydtl()" class="main-buttons">
+              		<button class="btn1">Continue</button>
+                </div>
+			</div>
+	</div>
+</ion-content>

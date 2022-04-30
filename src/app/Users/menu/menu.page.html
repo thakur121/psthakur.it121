@@ -1,0 +1,41 @@
+<ion-content>
+	<div [routerLink]="'/home'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">Settings</div>
+	<div class="menu">
+		<ul>
+			<li [routerLink]="'/profile'">
+				<ion-icon name="person-circle-outline"></ion-icon>
+				<p>Profile</p>
+			</li>
+			<li [routerLink]="'/history'">
+				<ion-icon name="reload-circle"></ion-icon>
+				<p>Request History</p>
+			</li>
+			<li [routerLink]="'/otheraccpetride'">
+				<ion-icon name="reload-circle"></ion-icon>
+				<p>Some Special Ride</p>
+			</li>
+			<li [routerLink]="'/chat'">
+				<ion-icon name="mail"></ion-icon>
+				<p>Support</p>
+			</li>
+			<li [routerLink]="'/help'">
+				<ion-icon name="alert-circle"></ion-icon>
+				<p>Help</p>
+			</li>
+			<li (click)="gotologoutfun()">
+				<ion-icon name="power"></ion-icon>
+				<p>Logout</p>
+			</li>
+		</ul>
+	</div>
+</ion-content>
+<ion-footer>
+	<div (click)="gotodriverfun()" class="switch-driver">
+		<ion-icon name="repeat"></ion-icon>
+		<p>Switch to driver</p>
+		
+	</div>
+</ion-footer>

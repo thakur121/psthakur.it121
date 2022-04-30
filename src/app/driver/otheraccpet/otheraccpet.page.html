@@ -1,0 +1,85 @@
+
+<ion-content>
+	<div [routerLink]="'/driver-menu'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">
+		<p>Some Special Ride</p>
+	</div>
+	
+	<div *ngFor="let rl of RideList" class="total-prosection">
+		<ion-item-sliding>
+ 		 	<ion-item>
+				<div class="prolist">
+					<div class="sourc-des">
+						<div class="fo-inner">
+							<ul>
+								<li>
+									<ion-icon name="radio-button-on"></ion-icon>
+								</li>
+								<li>
+									<p>Leaving Form</p>
+									<h4>{{rl.from_location}}</h4>
+								</li>
+								<!-- <li>
+									<div class="amt" style="color: #8705fb;">{{rl.distance}} M</div>
+								</li> -->
+							</ul>
+							
+							<ul>
+								<li>
+									<ion-icon name="radio-button-on" style="color: #8705fb;"></ion-icon>
+								</li>
+								<li>
+									<p>Going To</p>
+									<h4>{{rl.to_location}}</h4>
+								</li>
+								<li>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="driver-dtl-to">
+						<div class="img">
+							<img src="{{rl.vehicle_photo}}">
+						</div>
+						<div class="contant">
+							<div class="name-date">
+								<div class="name">
+									<h4>{{rl.customer_name}}</h4>
+								</div>
+								
+								<div  class="date">
+									<span>$ {{rl.offer_price}}</span>
+								</div>
+							</div>
+							<div class="icon-detl underline">
+								
+								<div class="sec">
+									<ion-icon name="time-outline"></ion-icon>
+									<p> {{rl.schedule_date | date:'medium' }}</p>
+								</div>
+								<!-- <div class="sec">
+									<ion-icon name="time-outline"></ion-icon>
+									<p> {{rl.miles}} Mils</p>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</ion-item>
+			<div class="btn" *ngIf="rl.status == 1">
+				<div  (click)=" Cancelapifun(rl.user_id,rl.trip_id,'4')" class="btn1">
+					<button class="rej">
+						<ion-icon name="close"></ion-icon>&nbsp;Reject
+					</button>
+				</div>
+				<div  (click)=" gotoaccpted(rl.user_id,rl.trip_id,'3')" class="btn1">
+					<button class="acc">
+						<ion-icon  name="checkmark"></ion-icon>&nbsp;Accept
+					</button>
+				</div>
+			</div>
+		</ion-item-sliding>
+	</div>
+</ion-content>

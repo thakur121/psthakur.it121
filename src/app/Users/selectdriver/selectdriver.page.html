@@ -1,0 +1,101 @@
+<ion-header >
+	<div [routerLink]="'/menu'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+  	<ion-toolbar>
+    	<ion-title>Select Driver</ion-title>
+  	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+	
+     <div *ngIf="driverstatus!=0" class="wait">
+		 <div class="img-waiting">
+			 <img src="assets/images/wait.png">
+		 </div>
+     <h4> Waiting for Driver's offer!</h4>
+	 <p>Driver will start sending thier best offer <br> within a while. </p>
+	</div>
+	<div>
+	<div *ngFor="let dl of  DriverList" class="driver-list">
+		<div class="outer">
+			<div class="img">
+				<img src="{{dl.profile_image}}">
+			</div>
+			<div class="data">
+				<h4>{{dl.driver_name}}</h4>
+				<div class="qu-amount">$ {{dl.offer_price}}</div>
+				<div class="data-list">
+					<div class="setup">
+						<p>
+							<ion-icon class="star" name="star"></ion-icon>{{dl.avgRating}}
+						</p>
+					</div>
+					<div class="setup">
+						<p>
+							<ion-icon name="time-outline"></ion-icon>{{dl.arrived_time}} min
+						</p>
+					</div>
+					<div class="setup">
+						<p>
+							<ion-icon name="map-outline"></ion-icon>{{dl.distance}} Km
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn" *ngIf="dl.status!==true">
+			<div  (click)="gotoaccptedtrip(dl.driver_id,'2')" class="btn1">
+				<button class="rej">
+					<ion-icon name="close"></ion-icon>&nbsp;Reject
+				</button>
+			</div>
+			<div  (click)="gotoaccptedtrip(dl.driver_id,'3')" class="btn1">
+				<button class="acc">
+					<ion-icon  name="checkmark"></ion-icon>&nbsp;Accept
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+</ion-content>
+<ion-footer>
+	<div class="footer-outer">
+		<div class="fo-inner">
+			<ul>
+				<li>
+					<ion-icon name="radio-button-on"></ion-icon>
+				</li>
+				<li>
+					<p>Leaving Form</p>
+					<h4>{{RequestRide.from}}</h4>
+				</li>
+				<li>
+				   <div class="amt" style="color: #8705fb;">{{RequestRide.expected_distance | number: '1.0-0'}} Km</div>
+				</li>
+			</ul>
+			<div class="down-arere">
+				<ion-icon name="arrow-down"></ion-icon>
+			</div>
+			<ul>
+				<li>
+					<ion-icon name="radio-button-on" style="color: #8705fb;"></ion-icon>
+				</li>
+				<li>
+					<p>Going To</p>
+					<h4>{{RequestRide.to}}</h4>
+				</li>
+				<li>
+					<div class="amt-fare">
+						<h5>${{RequestRide.charge}}</h5>
+						<p>Average Fare</p>
+					</div>
+						
+				</li>
+			</ul>
+		</div>
+	</div>
+</ion-footer>

@@ -1,0 +1,30 @@
+
+<ion-content>
+	<div class="wrrper">
+            <div class="back-arreow">
+                  <div class="mh-full">
+                        <span [routerLink]="'/driver-profile'">
+                              <ion-icon name="arrow-back"></ion-icon>
+                        </span>
+                  </div>
+            </div>
+		<div class="logo-setup">
+			<div class="logo-wrap">
+				<img src="assets/images/logo.png">
+			</div>
+		</div>
+		<div class="login-enter">
+			<div class="heading">
+	           	<h2>You are going to work as</h2>
+	         	</div>
+	         	<div class="choose-vih-ty">
+	         		<div  *ngFor="let cl of catlist" class="one" [ngClass]="{active: activetype===cl.id}" (click)="activetypefun(cl.id)" >
+	     				<img src="{{cl.image}}">
+	         		</div>
+	         	</div>
+	         	<div  class="main-buttons">
+				<button (click)="gotoaddcat()" class="btn1">Continue</button>
+	      	</div>
+		</div>
+	</div>
+</ion-content>

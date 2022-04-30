@@ -1,0 +1,102 @@
+
+
+<ion-content>
+	<div [routerLink]="'/menu'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">
+		<p>Some Special Ride</p>
+	</div>
+	<div *ngFor="let rl of RideList" class="total-prosection">
+		<ion-item-sliding>
+ 		 	<ion-item>
+				<div class="prolist">
+					<div class="sourc-des">
+						<div class="fo-inner">
+							<div class="distnce-count"><h4>{{rl.distance}} KM</h4></div>
+							<ul>
+								<li>
+									<span class="point-ico"><ion-icon name="radio-button-on-outline"></ion-icon></span>
+									<p>Leaving Form</p>
+									<h4>{{rl.from_location}}</h4>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<span class="point-ico"><ion-icon name="radio-button-on-outline"></ion-icon></span>
+									<p>Going To</p>
+									<h4>{{rl.to_location}}</h4>
+								</li>
+							</ul>
+							<div class="down-arere">
+								<ion-icon name="arrow-down"></ion-icon>
+							</div>
+						</div>
+					</div>
+					<div class="driver-dtl-to_2">
+						<div class="contant">
+							<div class="prfl-dtls">
+								<div class="img">
+									<img src="{{rl.vehicle_photo}}">
+								</div>
+								<div class="name">
+									<h4>{{rl.first_name}} {{rl.last_name}}</h4>
+									<p><span><ion-icon name="car"></ion-icon></span>{{rl.vehicle_plate_number}}</p>
+									<p><span><ion-icon name="call"></ion-icon></span>{{rl.phone_number}}</p>
+								</div>
+							</div>
+								
+								<div class="dte-price">
+									<span>$ {{rl.offer_price}}</span>
+									<p *ngIf="rl.accepted_by_driver == 0 && rl.accepted_by_user == 1" class="ride-acpt">Ride Accepted</p>
+									<p *ngIf="rl.accepted_by_driver == 1" class="ride-acpt">Accepted By Driver</p>
+									<p  *ngIf="rl.accepted_by_driver == 0 && rl.accepted_by_user == 0" class="ride-blue">Waiting</p>
+									<p  *ngIf="rl.rejected_by_driver == 1" class="ride-rjct">Cancel By Driver</p>
+									<p  *ngIf="rl.rejected_by_user == 1" class="ride-rjct">Cancel</p>
+									<!-- <p class="ride-rjct">Completed</p> -->
+								</div>	
+						</div>
+						<div class="detl-descrplst">
+							<div class="lft-dscrptg">
+								<div class="sec">
+									<h5>Scheduled Time</h5>
+									<p><span><ion-icon name="time-outline"></ion-icon></span> {{rl.schedule_date | date:'medium'}}</p>
+								</div>
+								<div class="sec">
+									<h5>Approx Time</h5>
+									<p>{{rl.approx_time}}</p>
+								</div>
+							</div>
+							<div class="ful-descrp">
+								<p>{{rl.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ion-item>
+			<ion-item-options *ngIf="rl.accepted_by_user == 0" class="itemOptions">
+				<!-- <ion-item-options  class="itemOptions"> -->
+	      		<div  class="slide-btn">
+	      			<div (click)="Cancelapifun(rl.id,'0')" class="opt-hide">
+	        			<ion-icon name="close-outline"></ion-icon>
+	        			<p>Rejected</p>
+	        		</div>
+	        		<div (click)="gotoaccpted(rl.driver_id,rl.id,'1')" class="opt-map">
+	        			<ion-icon name="checkmark-outline"></ion-icon>
+	        			<p>Accpted</p>
+	        		</div>
+	      		</div>
+			</ion-item-options>
+			<ion-item-options *ngIf="rl.accepted_by_user == 1" class="itemOptions">
+				<!-- <ion-item-options  class="itemOptions"> -->
+	      		<div  class="slide-btn">
+	      			<div (click)="Cancelapifun(rl.id,'0')" class="opt-can">
+	        			<ion-icon name="close-outline"></ion-icon>
+	        			<p>Cancel</p>
+	        		</div>
+	        		
+	      		</div>
+			</ion-item-options>
+		</ion-item-sliding>
+	</div>
+</ion-content>

@@ -1,0 +1,141 @@
+<ion-content>
+      <div [routerLink]="'/menu'"  class="back-arrow">
+            <img src="assets/images/menu.png" alt="flag">
+      </div>
+      <div class="full-size" id="home_c">
+            <!-- <img src="assets/images/bkgmap.png"> -->
+
+            
+      </div>
+      <div  *ngIf="changefarest=='2'" class="change-cash">
+                 <!--  <div class="cash-header">
+                        <p>this type service at your price</p>
+                        <h4>Probably ${{RequestRide.price}} is not a attractive enough , we recommend you to raise the price</h4>
+                  </div> -->
+                  <div class="ckeck-box-sec">
+                        <div  class="check-from">
+                              <img src="assets/images/icon-1.png">
+                              <p>{{RequestRide.pickup_lo}}&nbsp;</p>
+                        </div>
+                        <div  class="check-from">
+                              <img src="assets/images/icon-1.png">
+                              <p>{{RequestRide.drop_lo}}&nbsp;</p>
+                              
+                        </div>
+
+                        <div (click)="addpaymentfun('1')" class="check-from">
+                              <div class="doller"><span>$</span></div> 
+                              <p>{{RequestRide.price}} , {{RequestRide.payment_type_name}}</p>
+                        </div> 
+                  </div>
+                  <div class="Plus-minus">
+                       
+                        <div class="Plus-minus-btn">
+                              <div  class="minus-btn">
+                                    <button (click)="gotoincressdecress('1')"  class="btton">-0.5</button>
+                              </div>
+                              <div class="price">
+                                    <p>Current fare</p>
+                                    <h4>${{currentprice}}</h4>
+                              </div>
+                               <div  class="minus-btn">
+                                    <button (click)="gotoincressdecress('2')" class="btton active">+0.5</button>
+                              </div>
+                        </div>
+
+                  </div>
+                  <div class="btnol">
+                       <div (click)="addreuestridefun()" class="main-buttons">
+                              <button class="btn1">Change fare</button>
+                        </div> 
+                  </div>
+            </div>
+</ion-content>
+<ion-footer *ngIf="changefarest=='1'">
+      <div class="ser-oter">
+            <div class="service">
+                  <div (click)="servicetypefun('1')" [ngClass]="{'active': RequestRide.v_type==1}" class="ser-one">
+                        <img src="assets/images/Ride.png">
+                        <span>Ride</span>
+                  </div>
+                  <div (click)="servicetypefun('2')" [ngClass]="{'active': RequestRide.v_type==2}" class="ser-one">
+                        <img src="assets/images/Courier.png">
+                        <span>Courier</span>
+                  </div>
+                  <div (click)="servicetypefun('3')" [ngClass]="{'active': RequestRide.v_type==3}" class="ser-one">
+                        <img src="assets/images/Flete.png">
+                        <span>Flete</span>
+                  </div>
+                  <div (click)="servicetypefun('4')" [ngClass]="{'active': RequestRide.v_type==4}" class="ser-one">
+                        <img src="assets/images/Intercity.png">
+                        <span>Intercity</span>
+                  </div>
+            </div>
+      </div>
+      <div class="ckeck-box-sec">
+            <div (click)="gotopichuploaca('1')" class="check-from">
+                  <img src="assets/images/icon-1.png">
+                  <p>{{RequestRide.pickup_lo}}&nbsp;</p>
+            </div>
+            <div  class="check-from">
+                  <div class="drop-add"(click)="gotopichuploaca('2')">
+                        <img src="assets/images/icon-2.png">
+                        <p >{{RequestRide.drop_lo}}&nbsp;</p>  
+                  </div>
+                  <ion-icon (click)="gotoenterlocationfun()" class="plus-icon" name="add-outline"></ion-icon>
+            </div>
+
+            <div *ngIf="stoplist" class="stop-list">
+                  <div *ngFor="let sl of stoplist"class="s-stop">
+                        <p>{{sl.address}}</p>
+                  </div>
+
+            </div>
+            
+            <div (click)="addpaymentfun('1')" class="check-from">
+                  <div class="doller"><span>$</span></div> 
+                  <p *ngIf="RequestRide.price">{{RequestRide.price}}   &nbsp;<span *ngIf="RequestRide.payment_type">,</span> {{RequestRide.payment_type_name}}</p>
+                  <p  *ngIf="!RequestRide.price">Offer your fare</p>
+            </div> 
+            <div class="check-from">
+                  <div class="comment">
+                        <img src="assets/images/comment.png">
+                  </div> 
+                  <ion-input type="text" [(ngModel)]="comment" placeholder="Comment and wishes"></ion-input>
+            </div>  
+      </div>
+      <div class="btnol">
+           <div (click)="addrequestform()" class="main-buttons">
+                  <button class="btn1">Request Ride</button>
+            </div> 
+      </div>
+      <div class="popup-outer" *ngIf="cashpopup=='1'" >
+            <div class="popup-iner">
+                  <div class="total-contact">
+                        <div class="popuphead">
+                              <h4>Payment modes</h4>
+                        </div> 
+                        <div class="contant">
+                              <h4>Specify a resonable fare</h4>
+                              <div class="check-from">
+                                    <div class="doller"><span>$</span></div> 
+                                    <ion-input type="tel" [(ngModel)]="RequestRide.price" placeholder="0"></ion-input>
+                              </div>
+                              <h4>Choose Payment mode</h4>
+                              <div (click)="gotopaymentfun('1','Cash')" class="check-from">
+                                    <ion-checkbox color="primary"  [checked]="RequestRide.payment_type==1" ></ion-checkbox>
+                                    <p>Cash</p>
+                              </div>
+                              <div (click)="gotopaymentfun('2','Pogo Con Yappy')"  class="check-from">
+                                    <ion-checkbox color="primary"  [checked]="RequestRide.payment_type==2"  ></ion-checkbox>
+                                    <p>Pogo Con Yappy</p>
+                              </div>
+                        </div>
+                        <div class="two-btns">
+                              <button class="btn1" (click)="addpaymentfun('2')">Close</button>
+                              <button class="btn2" (click)="addpaymentfun('2')">Done</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</ion-footer>

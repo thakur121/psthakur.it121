@@ -1,0 +1,65 @@
+<ion-content>
+	<div [routerLink]="'/driver-home'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">Settings</div>
+	<div class="menu">
+		<ul>
+			<li [routerLink]="'/driver-profile'">
+				<ion-icon name="person-circle-outline"></ion-icon>
+				<p>Profile</p>
+			</li>
+			<li (click)="gotosecondride('1')" >
+				<ion-icon name="globe"></ion-icon>
+				<p>City</p>
+			</li>
+
+			<li (click)="gotosecondride('2')">
+				<ion-icon name="business"></ion-icon>
+				<p>Inter-city</p>
+			</li>
+			<li (click)="gotosecondride('3')" >
+				<ion-icon name="car"></ion-icon>
+				<p>Truck New</p>
+			</li>
+			<li [routerLink]="'/support'">
+				<ion-icon name="construct"></ion-icon>
+				<p>Safety and Security</p>
+			</li>
+			<li [routerLink]="'/help'">
+				<ion-icon name="cog"></ion-icon>
+				<p>Settings</p>
+			</li>
+			<li [routerLink]="'/payment'" >
+				<ion-icon name="logo-usd"></ion-icon>
+				<p>Payment</p>
+			</li>
+			<li [routerLink]="'/chat'">
+				<ion-icon name="mail"></ion-icon>
+				<p>Support</p>
+			</li>
+			<li [routerLink]="'/reviews'" >
+				<ion-icon name="star-half"></ion-icon>
+				<p>Ratings</p>
+			</li>
+			<li [routerLink]="'/support'">
+				<ion-icon name="cash"></ion-icon>
+				<p>My Earnings</p>
+			</li>
+			<li [routerLink]="'/help'">
+				<ion-icon name="warning"></ion-icon>
+				<p>Help</p>
+			</li>
+			<li (click)="gotologoutfun()">
+				<ion-icon name="power"></ion-icon>
+				<p>Logout</p>
+			</li>
+		</ul>
+	</div>
+</ion-content>
+<ion-footer>
+	<div (click)="gotouserfun()" class="switch-driver">
+		<ion-icon name="repeat"></ion-icon>
+		<p>Switch to Passenger</p>
+	</div>
+</ion-footer>

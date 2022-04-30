@@ -1,0 +1,32 @@
+<ion-content>
+	<div class="wrrper">
+		<div class="logo-setup">
+			<img src="assets/images/logo.png">
+			<div class="login-enter">
+				<div class="heading">
+                    <h2>Your Id <b>verification</b>.</h2>
+                </div>
+				<div class="pd-detils">
+                 	<div (click)="presentActionSheet()" class="ver-img-sec">
+                 		<img src="{{showimg}}">
+                 		<div class="footer">
+             			 	<p>click on the image to upload your photo</p>
+                 		</div>
+                 	</div>
+                 	<div class="contact">
+                 		<p>Bring the driver's licence infront of you and take a photo as an example:</p>
+                 		<ul>
+                 			<li><p>the photo should be clearly visible with your face and your driver's Licence</p></li>
+                 			<li><p>the photo should be take in good light and good quality</p></li>
+                 			<li><p>Photos with sunglasses are not allowed </p></li>
+                 		</ul>
+                 	</div>
+                </div>
+                <div [routerLink]="'/verifed'" class="main-buttons">
+              		<button class="btn1">Submit</button>
+                </div>
+			</div>
+		</div>
+		
+	</div>
+</ion-content>

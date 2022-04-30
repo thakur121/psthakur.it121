@@ -1,0 +1,36 @@
+<ion-content>
+	<div class="wrrper">
+		<div class="logo-setup">
+			<div class="logo-wrap">
+				<img src="assets/images/logo.png">
+			</div>
+		</div>
+		<div class="login-enter">
+				<h4><span>Login</span> with your phone number</h4>
+				<div class="input-fields">
+                    <div class="cn-wrapper">
+                      	<div class="code-number">
+	                      	<div class="code">
+                                <img src="assets/images/flag.png" alt="flag">
+                                <ion-select placeholder="Phone code" [(ngModel)]="userdata.phone_code">
+                                	<ion-select-option value="+507">+507</ion-select-option>
+									<ion-select-option value="+123">+123</ion-select-option>
+									<ion-select-option value="+91">+91</ion-select-option>
+                                </ion-select>
+	                      	</div>
+                      		<div class="number">
+                                <ion-input type="tel" [(ngModel)]="userdata.phone" placeholder="000-000-0000"></ion-input>
+                          	</div>
+                        </div>
+                    </div>
+                    <div (click)="gotologin()" class="main-buttons">
+                      	<button class="btn1">Continue</button>
+                    </div>
+              	</div>
+			</div>
+		<div class="driver-login">
+			<p>I am a User <a [routerLink]="'/login'">Login</a></p>
+		</div>
+	</div>
+
+</ion-content>

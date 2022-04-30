@@ -1,0 +1,57 @@
+<ion-content>
+	<div [routerLink]="'/menu'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">Ride history</div>
+	<div class="outer-padd">
+
+		<div *ngFor="let rl of  RideList" class="total-prosection">
+			<div class="prolist" (click)="gotoridedetils(rl.trip_id,rl.status)">
+				<div class="sourc-des">
+					<div class="fo-inner">
+						<ul>
+							<li>
+								<ion-icon name="radio-button-on"></ion-icon>
+							</li>
+							<li>
+								<p>Leaving Form</p>
+								<h4>{{rl.from}}</h4>
+							</li>
+							<li>
+								<div class="amt" style="color: #8705fb;">{{rl.expected_distance | number: '1.0-0'}} Km</div>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<ion-icon name="radio-button-on" style="color: #8705fb;"></ion-icon>
+							</li>
+							<li>
+								<p>Going To</p>
+								<h4>{{rl.to}}</h4>
+							</li>
+							<li>
+								
+									
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="driver-dtl">
+					<div *ngIf="rl.driver_id > 0" class="img">
+						<img src="{{rl.profile_image}}">
+					</div>
+					<div *ngIf="rl.driver_id > 0" class="name">
+						<h4>{{rl.first_name}}</h4>
+					</div>
+					<div class="date">
+						<ion-icon name="calendar-outline"></ion-icon>
+						{{rl.created_at}}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+
+</ion-content>

@@ -1,0 +1,148 @@
+ .otp-box {
+    margin-top: 40px;
+    .otp-txt {
+        margin: 0 -5px;
+        text-align: center;
+        display: flex;
+        .single-input {
+            width: 25%;
+            height: 50px;
+            display: inline-block;
+            padding: 0 4px;
+            input {
+                height: 100%;
+                width: 100%;
+                border: 0;
+                color: #8705fb;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                background: #f5e9ff !important;
+                border-radius: 6px;
+                outline: none;
+            }
+        }
+      
+    }
+}
+
+.resend-otp {
+    margin: 20px 0 40px;
+    p {
+        a {
+            color: #8705fb;
+            font-weight: 600;
+        }
+    }
+}
+
+
+
+.wrrper {
+    min-height: 100%;
+    background: #f8f9fd;
+    position: relative;
+    padding-bottom: 10px;
+    overflow: auto;
+    .logo-wrap {
+        max-width: 75%;
+        margin: 0 auto 25px;
+    }
+    .login-enter {
+        background: #fff;
+        margin: -45px 20px 50px;
+        position: relative;
+        z-index: 1;
+        padding: 35px;
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+
+.login-enter{
+    h4 {
+        font-size: 25px;
+        max-width: 250px;
+        margin: 0;
+        padding: 14px 0;
+        line-height: 1.4;
+        span {
+            font-weight: 600;
+        }
+    }
+    .cn-wrapper {
+        margin: 20px 0 40px;
+        label {
+            display: block;
+            margin: 0 0 5px;
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+        }
+        .code-number {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #ffffff;
+            padding: 1px;
+            border-bottom: 1px solid #c1c0c0;
+            .code {
+                display: inline-flex;
+                align-items: center;
+                img {
+                    width: 22px;    
+                    margin-right: 5px;
+                }
+                ion-select {
+                    padding: 0 10px 0 5px;
+                    width: 100px;
+                    height: 40px;
+                    border: 0;
+                    font-size: 18px;
+                    color: #000;
+                    background: #fff;
+                    opacity: 1;
+                    font-weight: 400;
+                }
+            }
+            .number {
+                width: 100%;
+                ion-input {
+                    width: 100%;
+                    height: 40px;
+                    border: 0;
+                    font-size: 18px;
+                    --background: #fff;
+                    color: #000;
+                    opacity: 1;
+                    --padding-start: 0;
+                    --padding-end: 15px;
+                    font-weight: 400;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+
+
+    .otp-inpubox {
+        margin-top: 17px;
+        div {
+                width: 125px;
+                margin: 0 auto;
+            ion-input {
+                border-bottom: 1px solid #e5c8fe;
+                padding: 0px 10px !important;
+            }
+        }
+    }
+
+    .otp-mobile {
+        margin-top: 25px;
+    }
+}
+
+
+
+

@@ -1,0 +1,93 @@
+<ion-content>
+	<div [routerLink]="'/driver-home'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">Reviews</div>
+	<div class="page-content">
+		<div class="main-ratings">
+			<h1 style="color: #8500ff;">{{ReviewData.avgRating}}</h1>
+			<div *ngIf="ReviewData.avgRating=='1'" class="star-img">
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+			</div>
+			<div *ngIf="ReviewData.avgRating=='2'" class="star-img">
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+			</div>
+			<div *ngIf="ReviewData.avgRating=='3'" class="star-img">
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+			</div>
+			<div *ngIf="ReviewData.avgRating=='4'" class="star-img">
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon   name="star" ></ion-icon>
+			</div>
+			<div *ngIf="ReviewData.avgRating=='5'" class="star-img">
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+				<ion-icon  class="active" name="star" ></ion-icon>
+			</div>
+			<p>Based on <span>{{ReviewData.review_count}}</span> reviews</p>
+		</div>
+		<div class="Total-perfomace">
+			<div class="single-pgb">
+				<p>Reviews</p>
+				<div class="progress-outer">
+					<div class="fillcss highcolor" style="width:80%"></div>
+				</div>
+				<h5>Medium</h5>
+			</div>
+			<div class="single-pgb getmargin">
+				<p>Experiencer</p>
+				<div class="progress-outer">
+					<div class="fillcss lowcolor" style="width:25%"></div>
+				</div>
+				<h5>Novice</h5>
+			</div>
+			<div class="single-pgb">
+				<p>Reputation</p>
+				<div class="progress-outer">
+					<div class="fillcss highcolor" style="width:100%"></div>
+				</div>
+				<h5>Excellent</h5>
+			</div>
+			<div class="single-pgb getmargin">
+				<p>Frequency Of operations</p>
+				<div class="progress-outer">
+					<div class="fillcss medicolor" style="width:50%"></div>
+				</div>
+				<h5>Very Low</h5>
+			</div>
+			
+		</div>
+		<div class="review-count">
+			<div class="count-sec">
+				<h4>{{ReviewData.rides_count}}</h4>
+				<p>RIDES</p>
+			</div>
+			<div class="count-sec">
+				<h4>{{ReviewData.review_count}}</h4>
+				<p>RIVIEWS</p>
+			</div>
+			<div class="count-sec">
+				<h4>$ {{ReviewData.total_amount}}</h4>
+				<p>BALANCE</p>
+			</div>
+		</div>
+		
+	</div>
+</ion-content>

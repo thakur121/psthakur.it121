@@ -1,0 +1,69 @@
+<ion-content>
+	<div [routerLink]="'/driver-menu'" class="back-arrow">
+		<img src="assets/images/left-arrow.png" alt="flag">
+	</div>
+	<div class="header">Frieght</div>
+	<div class="choose-vih-ty withpadding">
+		<div class="four" [ngClass]="{active: activetype==='1'}" (click)="activetype='1'" >
+           	<img src="assets/images/Ride.png">
+   		</div>
+        <div class="four" [ngClass]="{active: activetype==='2'}" (click)="activetype='2'">
+           	<img src="assets/images/Courier.png">
+        </div>
+        <div class="four" [ngClass]="{active: activetype==='3'}" (click)="activetype='3'" >
+           	<img src="assets/images/Flete.png">
+   		</div>
+        <div class="four" [ngClass]="{active: activetype==='4'}" (click)="activetype='4'">
+           	<img src="assets/images/Intercity.png">
+        </div>
+	</div>
+	<div class="Ride-form">
+		<div class="ride-input">
+			<ion-icon name="radio-button-on"></ion-icon>
+ 			<ion-input placeholder="Enter Pickup Point"></ion-input>
+		</div>
+		<div class="ride-input">
+			<ion-icon name="radio-button-on"></ion-icon>
+ 			<ion-input placeholder=" Enter Drop-off Point"></ion-input>
+		</div>
+		<div class="ride-input">
+			<ion-icon name="radio-button-on"></ion-icon>
+ 			<ion-input placeholder="Now"></ion-input>
+		</div>
+		<div class="ride-input">
+			<ion-icon name="radio-button-on"></ion-icon>
+ 			<ion-input placeholder="Describe (required)"></ion-input>
+		</div>
+		<div class="ride-input">
+			<ion-icon name="radio-button-on"></ion-icon>
+ 			<ion-input placeholder="Price"></ion-input>
+		</div>
+	</div>
+	<div class="img-upload">
+		<p>Upload photo of cargo*</p>
+		<div class="upload-doc-we">
+     		<div class="signl">
+             	<img src="assets/images/image.png">
+            </div>
+        </div>
+	</div>
+	<div class="button-cargo">
+		<div  class="main-buttons">
+            <button class="btn1">Order</button>
+    	</div>
+	</div>
+
+</ion-content>
+<ion-footer>
+	<div class="driver-order-footer">
+		<div class="sec-one">
+			<ion-icon name="add"></ion-icon>
+			<p>Create Request</p>
+		</div>
+		<div class="sec-one">
+			<ion-icon name="journal"></ion-icon>
+			<p>My Requests</p>
+			
+		</div>
+	</div>
+</ion-footer>

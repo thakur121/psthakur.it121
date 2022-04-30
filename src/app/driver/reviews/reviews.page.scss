@@ -1,0 +1,93 @@
+.page-content {
+    margin: 82px 25px 25px 25px;
+    .main-ratings {
+	    text-align: center;
+	    h1 {
+		    font-weight: 900;
+		    margin-top: 20px;
+		    font-size: 26px;
+		}
+		.star-img {
+		    font-size: 24px;
+		    ion-icon {
+			    margin-left: 10px;
+			    color: #fee195;
+			}
+			.active {
+			    color: #f5b104;
+			}
+		}
+		p {
+			font-size: 13px;
+			color: #797070;
+			font-weight: 100;
+		}
+	}
+}
+.progress-outer{
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+    border-radius: 25px;
+    .fillcss{
+    	color: #fff!important;
+    	height: 9px;
+	    border-radius: 48px;
+	    text-align: center!important;
+    }
+    .lowcolor{
+	    background-image: linear-gradient(to right, #fe1200, #ffa600);
+    }
+    .medicolor{
+	    background-image: linear-gradient(to right, #ffcb00, #ebf33a);
+
+    }
+    .highcolor{
+    	background-image: linear-gradient(to right, #55d800, #24a500);
+    }
+}
+.Total-perfomace{
+	width: 100%;
+	height: 184px;
+	.single-pgb {
+	    width: 40%;
+	    float: left;
+	    p {
+		    font-size: 10px;
+		}
+		h5 {
+		    font-size: 14px;
+		    font-weight: 900;
+		}
+	}
+	.getmargin{
+		margin-left: 10%;
+	}
+}
+.review-count {
+    width: 100%;
+    margin-left: 0px;
+    .count-sec {
+	    width: 30%;
+	    float: left;
+	    text-align: center;
+	    background-color: #f7ebff;
+	    margin-left: 3%;
+	    border-radius: 9px;
+	    padding: 13px 17px;
+	    h4{
+			margin-left: 0;
+			color: #8500ff;
+			margin: 0;
+			padding: 0;
+			font-weight: 900;
+	    }
+	    p {
+		    margin: 0;
+		    padding: 0;
+		    color: #8500ff;
+		    font-size: 11px;
+		}
+	}:nth-child(1) {
+	  margin-left: 0;
+	}
+}
